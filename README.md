@@ -26,6 +26,9 @@ All books live under the `books/` directory. Inside each book, numbered subdirec
 books/
 ├── My Book/
 │   ├── data.md              # Book metadata + notes (never included in builds)
+│   ├── characters.md        # Character database (never included in builds)
+│   ├── trello/              # Raw Trello board export (never included in builds)
+│   │   └── board.json
 │   ├── 01/                  # Chapter 1
 │   │   ├── 01 - opening.md
 │   │   ├── 02 - main.md
@@ -45,6 +48,8 @@ books/
 - **Chapter directories** are sorted ascending by name — use zero-padded numbers (`01`, `02`, ...).
 - **Markdown files** within a chapter are sorted alphabetically — prefix with numbers for ordering.
 - **`data.md`** is always excluded from builds. It holds book metadata and your working notes.
+- **`characters.md`** is excluded from builds. It's a database of characters for reference while writing.
+- **`trello/`** is excluded from builds. It preserves raw Trello board data imported when the book was planned.
 - Start each chapter's first file with a `# Chapter Title` heading for the table of contents.
 
 ## data.md
@@ -68,7 +73,15 @@ lang: en
 - TODO: finish chapter 3
 ```
 
-The markdown body below the frontmatter is your scratchpad — story arcs, character details, TODOs, research notes, or anything else relevant to the book. It is never compiled into output.
+The markdown body below the frontmatter is your scratchpad — story arcs, TODOs, themes, research notes, or anything else relevant to the book. It is never compiled into output.
+
+## characters.md
+
+Optional file for books with named characters. Structured as markdown with a section per character — name, role, description, motivations, relationships. Used as a reference when writing; never compiled into the book.
+
+## trello/
+
+If a book was planned in Trello, the raw board export is preserved here as `board.json`. This includes all lists, cards, descriptions, comments, and checklists from the original Trello board. It serves as a permanent archive of the planning data and is never compiled into the book.
 
 ## Commands
 

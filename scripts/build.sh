@@ -50,6 +50,7 @@ for chapter_dir in "$BOOK_DIR"/*/; do
     # Skip non-chapter directories
     [[ "$dir_name" == ".build" ]] && continue
     [[ "$dir_name" == "images" ]] && continue
+    [[ "$dir_name" == "trello" ]] && continue
 
     for md_file in "$chapter_dir"*.md; do
         [[ ! -f "$md_file" ]] && continue
