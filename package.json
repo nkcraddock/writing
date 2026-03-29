@@ -1,0 +1,15 @@
+{
+  "name": "writing",
+  "private": true,
+  "description": "Multi-book writing repository with markdown-to-PDF pipeline",
+  "scripts": {
+    "dev": "bash scripts/dev.sh",
+    "build": "bash scripts/build.sh",
+    "list": "bash scripts/list-books.sh"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.0",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.0.0"
+  }
+}
