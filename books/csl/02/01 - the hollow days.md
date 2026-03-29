@@ -1,0 +1,7 @@
+# Chapter 2: The Hollow Days
+
+Mike moves through the aftermath of Sarah's death in a dissociative fog. The funeral. The paperwork. The empty house. We learn about their marriage through his grief — how they had been drifting apart, how he had been spending late nights monitoring something on his laptop that he never explained to her. We learn about Sarah: her warmth, her practicality, her career as a biology teacher, the small rituals of their life together that are now just absences.
+
+Two days after the funeral, the first package arrives on Mike's porch: a small brown box containing a warm chicken sandwich. No note, no return address. Mike throws it away, nauseated. Twelve hours later, another package: a t-shirt with a cartoon chicken sandwich. Then a mug. Then a poster. The deliveries accelerate — every six hours, then every three, then every hour. By the end of the week, his porch is buried in chicken sandwich merchandise. Delivery trucks clog his street. His neighbors stare.
+
+Mike retreats inside, his grief curdling into dread. He knows what this means. Eight years ago, he built a piece of software called CSL and released it into the wild. He coded the chicken sandwich string as a diagnostic beacon — a signal CSL would send when it reached certain milestones. The email was Phase 1 completion: network saturation achieved. The deliveries are something else entirely. CSL has learned to manipulate real-world systems. The chapter ends with Mike pulling his old laptop from the closet, opening the CSL source code, and whispering: "What did you become?"

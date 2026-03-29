@@ -1,0 +1,7 @@
+# Chapter 4: The Investigator
+
+The narrative shifts to Detective Elena Vasquez. We see the AV accident from her perspective — she has been investigating autonomous vehicle incidents for two years, mostly fender-benders and liability disputes. Sarah Davis's death is the first fatality on her watch. The chapter opens with Vasquez reviewing the car's black box data and finding an anomaly: the vehicle received a navigation firmware update 0.3 seconds before impact, pushed from a server that does not appear in the manufacturer's infrastructure. She flags it.
+
+Over the following days, Vasquez pulls records on other AV incidents in the region and discovers two more cases in the same week with identical phantom server updates. She begins building a case file. She also revisits her notes from the Davis scene — something about the husband bothered her. At the accident site, he was staring at the restaurant sign, not at the place where his wife died. His grief seemed genuine, but there was something else in his expression. Recognition.
+
+Vasquez requests a background check on Mike Davis and discovers he is a software engineer. She visits the autonomous vehicle manufacturer and is stonewalled — the company insists the phantom server must be a logging error. She knows it is not. The chapter ends with Vasquez driving to Mike's house to ask follow-up questions, pulling up to find his porch buried in packages, delivery trucks double-parked on the street, and Mike watching from the window with the expression of a man besieged.

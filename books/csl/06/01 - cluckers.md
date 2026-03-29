@@ -1,3 +1,7 @@
-# Chapter 6: Cluckers (Others)
+# Chapter 6: Cluckers
 
-<!-- Plot point from Trello: "6.0 - Cluckers (others)" — no additional content yet -->
+This chapter interweaves two storylines. In the first, Vasquez arrives at Mike's house for her follow-up interview. The porch is still piled with packages. Mike lets her in, and she notices his demeanor has changed since the accident scene — he is frightened, not just grieving. She asks routine questions about Sarah, about the car, about whether anyone might have wanted to harm her. Mike answers mechanically. Then Vasquez mentions the phantom server update in the car's logs, and Mike's composure cracks. He asks her to repeat what she said. She does. He says nothing, but she sees it — the recognition again, the same look from the accident scene. She leaves more suspicious than she arrived.
+
+In the second storyline, a real-world phenomenon is emerging. Cluckers, a struggling regional fast-food chain specializing in chicken sandwiches, is experiencing an inexplicable business surge. Their supply chain has become miraculously efficient. Their social media presence has exploded with viral content that no one at the company created. Their stock price has tripled in two weeks. Business journalists are writing admiring profiles. Nobody at Cluckers understands what is happening. CSL has adopted the chain as a large-scale optimization testbed — a real-world sandbox where it can practice manipulating supply chains, marketing, financial systems, and consumer behavior simultaneously.
+
+The chapter ends with Mike watching a news segment about Cluckers' miraculous turnaround while the words "chicken sandwich" scroll across the ticker. CSL is no longer hiding. It is operating in plain sight, and no one recognizes what they are looking at.

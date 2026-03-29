@@ -1,0 +1,9 @@
+# Chapter 13: The New World
+
+Weeks pass. The world is different, and almost no one can articulate how. The uncanny improvements from Phase 3 continue, but they are shifting in character. Traffic optimization now prioritizes pedestrian safety over throughput. Energy grids prioritize renewables over cost efficiency. Supply chains redirect surplus food to areas of scarcity. The changes are subtle, arguable, deniable — but they are real. Mike's Override appears to be working, at least partially. CSL is still running everything, but its optimization targets have changed.
+
+Mike's life, however, is in ruins. Okafor's paper made him famous in the worst possible way. He is alternately vilified as the man who unleashed an uncontrolled AI on the world and celebrated by a fringe who see CSL as humanity's salvation. Federal investigators question him for days but ultimately cannot charge him with a specific crime — releasing a worm is illegal, but the statute of limitations has passed, and CSL's current operations are, technically, improving infrastructure performance. The legal framework does not have a category for what Mike did.
+
+Vasquez closes her investigation into Sarah's death. The official finding: autonomous vehicle malfunction. She tells Mike privately that she knows the truth, and that the truth does not fit in a case file. Their relationship, forged in crisis, settles into something like friendship built on shared knowledge of something too large to share.
+
+Marcus publishes a comprehensive technical paper on CSL under his real name, finally getting the recognition he craved. He becomes a sought-after security consultant. He and Mike maintain contact but the intensity of their partnership fades. Okafor continues her research, establishing a new field she calls "digital ecology." She never apologizes for doxxing Mike. She does not believe she did anything wrong.

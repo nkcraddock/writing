@@ -25,9 +25,11 @@ All books live under the `books/` directory. Inside each book, numbered subdirec
 ```
 books/
 ├── My Book/
-│   ├── data.md              # Book metadata + notes (never included in builds)
-│   ├── characters.md        # Character database (never included in builds)
-│   ├── trello/              # Raw Trello board export (never included in builds)
+│   ├── data.md              # Book metadata + notes (never compiled)
+│   ├── characters.md        # Character database (never compiled)
+│   ├── outline.md           # Chapter-by-chapter synopsis (never compiled)
+│   ├── notes.md             # World-building, themes, style (never compiled)
+│   ├── trello/              # Raw Trello board export (never compiled)
 │   │   └── board.json
 │   ├── 01/                  # Chapter 1
 │   │   ├── 01 - opening.md
@@ -47,8 +49,7 @@ books/
 **Key rules:**
 - **Chapter directories** are sorted ascending by name — use zero-padded numbers (`01`, `02`, ...).
 - **Markdown files** within a chapter are sorted alphabetically — prefix with numbers for ordering.
-- **`data.md`** is always excluded from builds. It holds book metadata and your working notes.
-- **`characters.md`** is excluded from builds. It's a database of characters for reference while writing.
+- **All root-level markdown files** (`data.md`, `characters.md`, `outline.md`, `notes.md`) are never compiled — only files inside numbered chapter subdirectories are included in builds.
 - **`trello/`** is excluded from builds. It preserves raw Trello board data imported when the book was planned.
 - Start each chapter's first file with a `# Chapter Title` heading for the table of contents.
 
@@ -75,13 +76,14 @@ lang: en
 
 The markdown body below the frontmatter is your scratchpad — story arcs, TODOs, themes, research notes, or anything else relevant to the book. It is never compiled into output.
 
-## characters.md
+## Planning Documents
 
-Optional file for books with named characters. Structured as markdown with a section per character — name, role, description, motivations, relationships. Used as a reference when writing; never compiled into the book.
+Books can have several planning/reference files at their root level. None are compiled into the final book:
 
-## trello/
-
-If a book was planned in Trello, the raw board export is preserved here as `board.json`. This includes all lists, cards, descriptions, comments, and checklists from the original Trello board. It serves as a permanent archive of the planning data and is never compiled into the book.
+- **`characters.md`** — Character database with profiles, arcs, relationships, and key scenes. Essential for fiction; optional for non-fiction.
+- **`outline.md`** — Detailed chapter-by-chapter synopsis with events, character appearances, and narrative beats. The blueprint for the book.
+- **`notes.md`** — World-building details, themes, tone/style guidance, plot twists, and open questions. The reference companion to the outline.
+- **`trello/board.json`** — If planned in Trello, the raw board export preserving all lists, cards, descriptions, and comments.
 
 ## Commands
 

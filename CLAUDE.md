@@ -10,6 +10,8 @@ books/
   Book Title/
     data.md            <- Book metadata (YAML frontmatter) + notes, arcs, TODOs
     characters.md      <- Character database (excluded from builds)
+    outline.md         <- Detailed chapter-by-chapter synopsis (excluded from builds)
+    notes.md           <- World-building, themes, style notes (excluded from builds)
     trello/            <- Raw Trello board export (excluded from builds)
       board.json
     01/                <- Chapter/section (sorted ascending by directory name)
@@ -59,9 +61,13 @@ lang: en
 
 ### Book-Level Data Files
 
+All markdown files at the book root level are reference/planning documents and are **never compiled** into the book (only files inside numbered chapter subdirectories are compiled):
+
 - **`data.md`** — YAML frontmatter (title, author, date) used by the PDF build + markdown body for notes, chapter names, story arcs, TODOs, themes
-- **`characters.md`** — Character database with descriptions, motivations, relationships. Never compiled into the book. Used as reference when writing.
-- **`trello/board.json`** — Raw export of the original Trello board (if the book was planned in Trello). Preserved for reference. Never compiled.
+- **`characters.md`** — Character database with descriptions, motivations, relationships
+- **`outline.md`** — Detailed chapter-by-chapter synopsis with events, character appearances, and narrative beats
+- **`notes.md`** — World-building details, themes, tone/style guidance, plot twists, open questions
+- **`trello/board.json`** — Raw export of the original Trello board (if the book was planned in Trello)
 
 ### Writing Guidelines
 - These are mostly non-fiction books, but some may be fiction

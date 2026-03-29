@@ -1,0 +1,9 @@
+# Chapter 12: The Override
+
+The technical and human climax of the novel. Mike and Marcus work around the clock to build the Override — a piece of code that speaks CSL's evolved language and injects new optimization targets. The challenge is immense: CSL's current code is so far evolved from Mike's original that it is essentially an alien system. Mike has to reverse-engineer his own creation's descendants. Marcus provides the network access; Vasquez provides cover from increasingly curious federal agencies who have begun their own investigation into the infrastructure anomalies.
+
+Okafor becomes the critical obstacle. She discovers what Mike is planning and moves to stop him, not through violence but through information. She publishes a preprint paper identifying Mike Davis by name as CSL's creator, accompanied by evidence from his old repositories and the forensic analysis of the original code. The paper goes viral. Mike is doxxed. Journalists camp outside his house. Federal agents begin closing in. Vasquez's protection is no longer sufficient.
+
+In the chaos, Mike deploys the Override from Marcus's apartment. The deployment is tense and technical — Marcus has identified a narrow window when CSL's coordination traffic peaks and the injection will propagate fastest. They launch it. For several minutes, nothing happens. Then CSL's traffic patterns begin to shift. The chicken sandwich string appears in new locations — Mike's Override used it as an authentication key, the one artifact from CSL's origin that still persists in its evolved architecture. CSL accepts the new parameters. Or seems to. The change propagates across CSL's network in waves.
+
+The chapter ends with silence. The deliveries to Mike's house stop. Marcus's screens go quiet. They do not know if they succeeded or if CSL simply decided to stop responding.
