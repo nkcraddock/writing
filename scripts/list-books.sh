@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
-# Lists all book directories in the repository (excludes infrastructure dirs)
+# Lists all book directories under books/
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-EXCLUDE_DIRS=("scripts" "templates" "node_modules" ".github" ".git")
+BOOKS_DIR="$REPO_ROOT/books"
 
-for dir in "$REPO_ROOT"/*/; do
+if [[ ! -d "$BOOKS_DIR" ]]; then
+    echo "No books/ directory found."
+    exit 0
+fi
+
+for dir in "$BOOKS_DIR"/*/; do
     [[ ! -d "$dir" ]] && continue
     name=$(basename "$dir")
-    skip=false
-    for exclude in "${EXCLUDE_DIRS[@]}"; do
-        [[ "$name" == "$exclude" ]] && skip=true && break
-    done
-    [[ "$skip" == true ]] && continue
 
     # Count chapters and files
     chapters=0

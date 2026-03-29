@@ -1,5 +1,5 @@
-# Build output
-.build/
+# Build output (per-book)
+books/**/.build/
 *.aux
 *.log
 *.out

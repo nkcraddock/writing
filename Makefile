@@ -1,6 +1,7 @@
 .PHONY: pdf html dev list all clean install help
 
 SHELL := /bin/bash
+BOOKS_DIR := books
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
@@ -8,15 +9,15 @@ help: ## Show this help
 
 pdf: ## Build PDF: make pdf BOOK="Book Title"
 	@test -n "$(BOOK)" || (echo 'Usage: make pdf BOOK="Book Title"' && exit 1)
-	@bash scripts/build.sh "$(BOOK)" pdf
+	@bash scripts/build.sh "$(BOOKS_DIR)/$(BOOK)" pdf
 
 html: ## Build HTML: make html BOOK="Book Title"
 	@test -n "$(BOOK)" || (echo 'Usage: make html BOOK="Book Title"' && exit 1)
-	@bash scripts/build.sh "$(BOOK)" html
+	@bash scripts/build.sh "$(BOOKS_DIR)/$(BOOK)" html
 
 dev: ## Dev server with hot reload: make dev BOOK="Book Title"
 	@test -n "$(BOOK)" || (echo 'Usage: make dev BOOK="Book Title"' && exit 1)
-	@bash scripts/dev.sh "$(BOOK)"
+	@bash scripts/dev.sh "$(BOOKS_DIR)/$(BOOK)"
 
 list: ## List all books in the repository
 	@bash scripts/list-books.sh
@@ -24,11 +25,11 @@ list: ## List all books in the repository
 all: ## Build PDFs for all books
 	@bash scripts/list-books.sh | while IFS=' —' read -r name _rest; do \
 		echo "Building: $$name"; \
-		bash scripts/build.sh "$$name" pdf; \
+		bash scripts/build.sh "$(BOOKS_DIR)/$$name" pdf; \
 	done
 
 clean: ## Remove all .build directories
-	@find . -name '.build' -type d -exec rm -rf {} + 2>/dev/null || true
+	@find $(BOOKS_DIR) -name '.build' -type d -exec rm -rf {} + 2>/dev/null || true
 	@echo "Cleaned all build artifacts."
 
 install: ## Install local dev dependencies

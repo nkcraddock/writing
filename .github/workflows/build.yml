@@ -2,11 +2,13 @@ name: Build Books
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
+    paths:
+      - 'books/**'
   workflow_dispatch:
     inputs:
       book:
-        description: 'Book to build (directory name, or empty for changed books only)'
+        description: 'Book to build (directory name under books/, or empty for changed books only)'
         required: false
         type: string
 
@@ -24,8 +26,6 @@ jobs:
       - name: Find books to build
         id: find
         run: |
-          INFRA_DIRS="scripts templates node_modules .github .git"
-
           if [[ -n "${{ inputs.book }}" ]]; then
             # Manual trigger: build the specified book
             echo "books=[\"${{ inputs.book }}\"]" >> "$GITHUB_OUTPUT"
@@ -37,24 +37,20 @@ jobs:
           BOOKS=()
 
           while IFS= read -r file; do
-            # Get the top-level directory
-            top_dir=$(echo "$file" | cut -d'/' -f1)
-            [[ -z "$top_dir" ]] && continue
+            # Only look at files under books/
+            [[ "$file" != books/* ]] && continue
 
-            # Skip infrastructure directories and root files
-            skip=false
-            for infra in $INFRA_DIRS; do
-              [[ "$top_dir" == "$infra" ]] && skip=true && break
-            done
-            [[ "$skip" == true ]] && continue
-            [[ ! -d "$top_dir" ]] && continue
+            # Extract the book directory name (second path component)
+            book_name=$(echo "$file" | cut -d'/' -f2)
+            [[ -z "$book_name" ]] && continue
+            [[ ! -d "books/$book_name" ]] && continue
 
             # Add to list if not already present
             found=false
             for b in "${BOOKS[@]+"${BOOKS[@]}"}"; do
-              [[ "$b" == "$top_dir" ]] && found=true && break
+              [[ "$b" == "$book_name" ]] && found=true && break
             done
-            [[ "$found" == false ]] && BOOKS+=("$top_dir")
+            [[ "$found" == false ]] && BOOKS+=("$book_name")
           done <<< "$CHANGED_FILES"
 
           # Build JSON array
@@ -89,13 +85,13 @@ jobs:
       - name: Build PDF
         run: |
           chmod +x scripts/build.sh
-          bash scripts/build.sh "${{ matrix.book }}" pdf
+          bash scripts/build.sh "books/${{ matrix.book }}" pdf
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: "${{ matrix.book }}"
-          path: "${{ matrix.book }}/.build/*.pdf"
+          path: "books/${{ matrix.book }}/.build/*.pdf"
           retention-days: 90
 
       - name: Notify Discord

@@ -1,21 +1,22 @@
 # Writing Repository
 
 ## Purpose
-This is a multi-book writing repository. Each top-level directory (excluding `scripts/`, `templates/`, `node_modules/`, `.github/`) is a **book project**. Books are written in Markdown and compiled into professionally formatted PDFs via Pandoc + XeLaTeX.
+This is a multi-book writing repository. All books live under the `books/` directory — each subdirectory there is a **book project**. Books are written in Markdown and compiled into professionally formatted PDFs via Pandoc + XeLaTeX.
 
 ## Repository Structure
 
 ```
-/Book Title/
-  /data.md          <- Book metadata (YAML frontmatter) + notes, arcs, TODOs, character details
-  /01/              <- Chapter/section (sorted ascending by directory name)
-    /01 - part.md   <- Content files (sorted alphabetically, compiled in order)
-    /02 - part.md
-  /02/
-    /01 - part.md
+books/
+  Book Title/
+    data.md          <- Book metadata (YAML frontmatter) + notes, arcs, TODOs, character details
+    01/              <- Chapter/section (sorted ascending by directory name)
+      01 - part.md   <- Content files (sorted alphabetically, compiled in order)
+      02 - part.md
+    02/
+      01 - part.md
 ```
 
-Root-level directories: `scripts/`, `templates/`, `.github/`, `node_modules/` are infrastructure, not books.
+Root-level directories `scripts/`, `templates/`, `.github/`, `node_modules/` are infrastructure. The `books/` directory is the only place book projects live.
 
 ## Rules
 
@@ -42,14 +43,14 @@ lang: en
 ```
 
 ### Building
-- `make pdf BOOK="Book Title"` — build PDF
+- `make pdf BOOK="Book Title"` — build PDF (resolves to `books/Book Title`)
 - `make html BOOK="Book Title"` — build HTML
 - `make dev BOOK="Book Title"` — local dev server with hot reload
 - `make list` — list all books
 - `make all` — build all books as PDF
 
 ### CI/CD
-- Push to `main` triggers GitHub Actions: detects changed books, builds PDFs, uploads artifacts, notifies Discord
+- Push to `main` that changes files under `books/` triggers GitHub Actions: detects changed books, builds PDFs, uploads artifacts, notifies Discord
 - Discord webhook URL stored in GitHub secret `DISCORD_WEBHOOK_URL`
 
 ### Writing Guidelines

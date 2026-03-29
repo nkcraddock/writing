@@ -1,6 +1,6 @@
 # Writing
 
-A multi-book writing repository. Each book is a top-level directory containing Markdown files organized by chapter. Books are compiled into professionally formatted PDFs using Pandoc and LaTeX, built automatically in CI, and delivered to Discord.
+A multi-book writing repository. Each book lives under `books/` in its own directory, containing Markdown files organized by chapter. Books are compiled into professionally formatted PDFs using Pandoc and LaTeX, built automatically in CI, and delivered to Discord.
 
 ## Quick Start
 
@@ -20,20 +20,25 @@ make list
 
 ## Book Structure
 
-Each book lives in its own top-level directory. Inside, numbered subdirectories represent chapters or sections. Markdown files within each chapter are compiled in alphabetical order.
+All books live under the `books/` directory. Inside each book, numbered subdirectories represent chapters or sections. Markdown files within each chapter are compiled in alphabetical order.
 
 ```
-My Book/
-├── data.md              # Book metadata + notes (never included in builds)
-├── 01/                  # Chapter 1
-│   ├── 01 - opening.md
-│   ├── 02 - main.md
-│   └── 03 - closing.md
-├── 02/                  # Chapter 2
-│   ├── 01 - intro.md
-│   └── 02 - details.md
-└── 03/                  # Chapter 3
-    └── 01 - content.md
+books/
+├── My Book/
+│   ├── data.md              # Book metadata + notes (never included in builds)
+│   ├── 01/                  # Chapter 1
+│   │   ├── 01 - opening.md
+│   │   ├── 02 - main.md
+│   │   └── 03 - closing.md
+│   ├── 02/                  # Chapter 2
+│   │   ├── 01 - intro.md
+│   │   └── 02 - details.md
+│   └── 03/                  # Chapter 3
+│       └── 01 - content.md
+└── Another Book/
+    ├── data.md
+    └── 01/
+        └── 01 - intro.md
 ```
 
 **Key rules:**
@@ -67,11 +72,13 @@ The markdown body below the frontmatter is your scratchpad — story arcs, chara
 
 ## Commands
 
+All commands use the book's directory name (not the full path — `books/` is implied):
+
 | Command | Description |
 |---------|-------------|
 | `make dev BOOK="Title"` | Live-preview server at localhost:3000 with auto-reload |
-| `make pdf BOOK="Title"` | Build a PDF in `<book>/.build/` |
-| `make html BOOK="Title"` | Build HTML in `<book>/.build/` |
+| `make pdf BOOK="Title"` | Build a PDF in `books/<Title>/.build/` |
+| `make html BOOK="Title"` | Build HTML in `books/<Title>/.build/` |
 | `make all` | Build PDFs for every book |
 | `make list` | List all books with chapter/file counts |
 | `make clean` | Remove all `.build/` directories |
@@ -106,7 +113,7 @@ This starts a local server at `http://localhost:3000` that renders your book as 
 make pdf BOOK="My Book"
 ```
 
-Output lands in `My Book/.build/My Book.pdf`. The PDF includes:
+Output lands in `books/My Book/.build/My Book.pdf`. The PDF includes:
 - Title page (from `data.md` frontmatter)
 - Auto-generated table of contents
 - Numbered chapters and sections
@@ -114,7 +121,7 @@ Output lands in `My Book/.build/My Book.pdf`. The PDF includes:
 
 ## CI/CD
 
-Pushing to `main` automatically:
+Pushing to `main` with changes under `books/` automatically:
 1. Detects which books have changed files
 2. Builds PDFs for those books only
 3. Uploads PDFs as GitHub Actions artifacts (retained 90 days)
@@ -131,14 +138,14 @@ You can also trigger a build manually from the Actions tab, specifying a book na
 
 ## Starting a New Book
 
-1. Create a directory at the repo root with your book's title
+1. Create a directory under `books/` with your book's title
 2. Add a `data.md` with at least a title in the frontmatter
 3. Create chapter directories (`01/`, `02/`, ...) with markdown files inside
 4. Run `make dev BOOK="Your Book"` to start writing with live preview
 
 ```bash
-mkdir -p "My New Book/01"
-cat > "My New Book/data.md" << 'EOF'
+mkdir -p "books/My New Book/01"
+cat > "books/My New Book/data.md" << 'EOF'
 ---
 title: "My New Book"
 author: "Your Name"
@@ -149,7 +156,7 @@ date: "2026"
 - This book is about...
 EOF
 
-cat > "My New Book/01/01 - introduction.md" << 'EOF'
+cat > "books/My New Book/01/01 - introduction.md" << 'EOF'
 # Introduction
 
 Start writing here.
